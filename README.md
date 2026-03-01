@@ -5,6 +5,7 @@ A Chrome extension that translates [arXiv](https://arxiv.org/) HTML papers into 
 ## Features
 
 - **In-place Translation**: Translates the content of arXiv HTML papers (`https://arxiv.org/html/*`) directly on the page.
+- **Original Text Hover Tooltip**: Hover your mouse over the translated Japanese text to view a clean overlay containing the original English text.
 - **Customizable Prompt**: You can customize the prompt sent to the LLM to adjust the translation style or instructions.
 - **Model Selection**: Choose which Gemini model to use (e.g., `gemini-1.5-flash`, `gemini-1.5-pro`). Fetches available models dynamically using your API key.
 - **Privacy First**: Your Gemini API key is stored locally in your browser storage and is never sent anywhere other than the official Google API endpoint.
