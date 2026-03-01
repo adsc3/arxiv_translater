@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ArXiv Translation Options</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      background-color: #f7f9fc;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    input[type="password"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .hint {
+      display: block;
+      margin-top: 5px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    button.save-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    button.save-btn:hover {
+      background-color: #2563eb;
+    }
+
+    #status {
+      display: inline-block;
+      margin-left: 15px;
+      color: #10b981;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Settings</h1>
+
+  <div class="form-group">
+    <label for="apiKey">Gemini API Key</label>
+    <input type="password" id="apiKey" placeholder="AIzaSy...">
+    <span class="hint">Your API key is stored locally in your browser and never shared.</span>
+  </div>
+
+  <div class="form-group">
+    <label for="prompt">Translation Prompt (Instruction for the LLM)</label>
+    <textarea id="prompt"></textarea>
+    <span class="hint">This prompt will be sent along with the extracted arXiv HTML text to instruct the Gemini
+      model.</span>
+  </div>
+
+  <div class="form-group">
+    <label for="model">Gemini Model</label>
+    <div style="display: flex; gap: 8px;">
+      <select id="model"
+        style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit;">
+        <option value="gemini-1.5-flash" selected>gemini-1.5-flash</option>
+      </select>
+      <button type="button" id="fetchModelsBtn"
+        style="padding: 0 16px; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; background: #fff; font-weight: 600; color: #3b82f6;">Fetch</button>
+    </div>
+    <span class="hint">Select a model. Click "Fetch" to load available models using your API key.</span>
+    <span id="modelMsg" style="font-size: 13px; margin-top: 5px; display: none;"></span>
+  </div>
+
+  <div>
+    <button id="save" class="save-btn">Save Settings</button>
+    <span id="status">Settings saved!</span>
+  </div>
+
+  <script src="default_prompt.js"></script>
+  <script src="options.js"></script>
+</body>
+
+</html>

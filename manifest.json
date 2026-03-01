@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "ArXiv Translation to Japanese",
+  "version": "1.0",
+  "description": "Translates arXiv HTML papers into Japanese using the Gemini API.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://arxiv.org/html/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Translate to Japanese"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

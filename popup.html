@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Translate ArXiv</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        p.desc {
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        button.translate-btn {
+            width: 100%;
+            background-color: #10b981;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+        }
+
+        button.translate-btn:hover {
+            background-color: #059669;
+        }
+
+        button.translate-btn:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .footer {
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+        }
+
+        a.options-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        a.options-link:hover {
+            text-decoration: underline;
+        }
+
+        #error-msg {
+            color: #ef4444;
+            font-size: 13px;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ArXiv Translator</h2>
+    <p class="desc">Translate HTML papers to Japanese</p>
+
+    <button id="translateBtn" class="translate-btn">Translate Page</button>
+
+    <div id="error-msg"></div>
+
+    <div class="footer">
+        <a href="#" id="optionsLink" class="options-link">⚙️ Settings</a>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
